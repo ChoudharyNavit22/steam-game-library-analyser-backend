@@ -1,0 +1,47 @@
+{
+  "name": "steam-game-library-analyser-backend",
+  "version": "0.0.1",
+  "description": "steam game library analyser backend using nestjs",
+  "author": "Navit Choudhary",
+  "private": true,
+  "license": "MIT",
+  "scripts": {
+    "postinstall": "patch-package && yarn build-common-pkg",
+    "build-app": "yarn workspace @steam/platform-middleware build",
+    "build-common-pkg": "lerna run build --stream --concurrency 1 --scope @steam/steam-sdk",
+    "start:dev": "lerna run --stream --concurrency 1 --scope @steam/platform-middleware start:dev"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.48.2",
+    "@typescript-eslint/parser": "^5.48.2",
+    "comment-json": "^4.2.3",
+    "commitlint-plugin-regex-match": "^1.2.4",
+    "esbuild": "^0.17.17",
+    "esbuild-register": "^3.4.2",
+    "eslint": "^8.38.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-prettier": "^8.8.0",
+    "eslint-plugin-prettier": "^5.0.0",
+    "husky": "^8.0.3",
+    "lerna": "^6.6.1",
+    "lint-staged": "^13.2.1",
+    "nx": "15.9.2",
+    "patch-package": "^6.5.0",
+    "prettier": "^2.8.1",
+    "typescript": "^5.0.4"
+  },
+  "resolutions": {
+    "lerna/nx": "15.9.2"
+  },
+  "workspaces": [
+    "packages/*",
+    "services/*",
+    "public/*"
+  ],
+  "packageManager": "yarn@3.2.3",
+  "yarn": {
+    "args": [
+      "--ignore-engines"
+    ]
+  }
+}

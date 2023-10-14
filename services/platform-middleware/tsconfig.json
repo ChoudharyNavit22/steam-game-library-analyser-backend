@@ -1,0 +1,16 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "strictPropertyInitialization": false,
+    "declaration": true,
+    "sourceMap": true,
+    "outDir": "./dist",
+    "rootDir": "./src",
+    "importsNotUsedAsValues": "remove",
+    "ignoreDeprecations": "5.0",
+    "noEmit": false,       
+    "incremental": false
+  },
+  "exclude": ["node_modules/", "dist/", "coverage/", "../../node_modules/"],
+  "include": ["src"]
+}

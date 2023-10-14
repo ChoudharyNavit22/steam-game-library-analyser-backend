@@ -1,0 +1,52 @@
+{
+  "extends": "@tsconfig/node16",
+  "compilerOptions": {
+    "module": "commonjs",
+    "target": "es2017",
+    "outDir": "./dist",
+    "rootDir": "./src",
+    "allowSyntheticDefaultImports": true,
+    "alwaysStrict": true,
+    "esModuleInterop": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "isolatedModules": true,
+    "forceConsistentCasingInFileNames": true,
+    "moduleResolution": "node",
+    "pretty": true,
+    "resolveJsonModule": true,
+    "sourceMap": true,
+    "declaration": true,
+    "strict": true,
+    "strictNullChecks": true,
+    "noImplicitAny": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitThis": true,
+    "noImplicitReturns": true,
+    "allowUnreachableCode": false,
+    "strictFunctionTypes": true,
+    "strictBindCallApply": true,
+    "strictPropertyInitialization": true,
+    "removeComments": false,
+    "skipDefaultLibCheck": true,
+    "skipLibCheck": true,
+    "composite": false,
+    "incremental": true,
+    "sourceRoot": "src",
+    "baseUrl": "./"
+  },
+
+  "watchOptions": {
+    "excludeDirectories": ["**/node_modules", "node_modules/**"]
+  },
+  "references": [
+    {
+      "path": "packages/steam-sdk"
+    },
+  ],
+
+  "files": [],
+  "exclude": ["node_modules", "dist", "build", "coverage", "**/**/node_modules"]
+}
