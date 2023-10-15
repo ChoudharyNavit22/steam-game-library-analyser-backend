@@ -26,6 +26,8 @@
 
 [Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
 
+Please dont install any node_modules in any internal folders or try to run the application from internal folders as the whole application is automatically binded by Lerna and Yarn.
+
 # Contents
 
 * [Manual Deployment](#manual-deployment)
