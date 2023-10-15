@@ -98,7 +98,7 @@ $ yarn install
 $ cp .env.example .env
 ```
 
-Make Sure you add Steam key to the .env file. You can generate steam key (here)[https://steamcommunity.com/dev/apikey] and bind the domain to localhost if running locally or to the domain where you are running the project.
+Make Sure you add Steam key to the .env file. You can generate steam key [here](https://steamcommunity.com/dev/apikey) and bind the domain to localhost if running locally or to the domain where you are running the project.
 
 * Step5: Run local postgres using docker
 
