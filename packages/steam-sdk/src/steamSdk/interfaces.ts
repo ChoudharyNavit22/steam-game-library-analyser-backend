@@ -43,12 +43,14 @@ export interface ISteamUserGameAchievement {
     unlockedAchievements: number;
 }
 
+export interface ISteamUserGame {
+    gameName: string;
+    totalAchievements: number;
+    unlockedAchievements: number;
+    appid: number;
+    playtime_forever: number;
+}
+
 export interface ISteamUserGamesInfo extends ISteamUserGamesCount {
-    games: {
-        gameName: string;
-        totalAchievements: number;
-        unlockedAchievements: number;
-        appid: number;
-        playtime_forever: number;
-    }[];
+    games: ISteamUserGame[];
 }

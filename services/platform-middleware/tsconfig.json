@@ -9,7 +9,8 @@
     "importsNotUsedAsValues": "remove",
     "ignoreDeprecations": "5.0",
     "noEmit": false,       
-    "incremental": false
+    "incremental": false,
+    "moduleResolution": "node",
   },
   "exclude": ["node_modules/", "dist/", "coverage/", "../../node_modules/"],
   "include": ["src"]

@@ -2,6 +2,7 @@ import dotenv from 'dotenv';
 import { NestFactory } from '@nestjs/core';
 import { ConfigService } from '@nestjs/config';
 import { SwaggerModule, DocumentBuilder } from '@nestjs/swagger';
+import { migrateDb } from './db';
 import { AppModule } from './app.module';
 
 dotenv.config();
@@ -11,6 +12,8 @@ async function bootstrap() {
   const app = await NestFactory.create(AppModule);
 
   const configService = app.get(ConfigService);
+
+  await migrateDb();
 
   const port = configService.get<number>('PORT') || 3000;
   const hostname = '0.0.0.0';

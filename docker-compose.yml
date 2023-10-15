@@ -1,0 +1,16 @@
+version: '3.8'
+services:
+  db:
+    container_name: pg_container
+    image: postgres
+    restart: always
+    volumes:
+      - platform_db:/data/postgres
+    environment:
+      POSTGRES_USER: steam-test
+      POSTGRES_PASSWORD: steam-test
+      POSTGRES_DB: steam-test-db
+    ports:
+      - "5432:5432"
+volumes:
+  platform_db:

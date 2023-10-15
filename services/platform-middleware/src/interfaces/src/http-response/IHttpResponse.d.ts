@@ -11,3 +11,8 @@ export type ISingleValueHttpResponse<T> = {
     data?: T[];
   };
   
+  export type IMutationResult<T = void> = {
+    success: boolean;
+    message?: string;
+    data?: T | undefined;
+  };

@@ -6,7 +6,8 @@ import {
 
 import type {
     ISteamAccountInfo,
-    ISteamUserGamesInfo
+    ISteamUserGamesInfo,
+    ISteamUserGame
 } from './interfaces';
 
 export class steamSDK {
@@ -31,13 +32,14 @@ export class steamSDK {
             await Promise.all(userGames.games.map(async (game) => {
                 const gameInfo = await getSteamUserGameAchievement(this.steamKey,steamId,game.appid);
                 if(gameInfo){
-                    games.push({
+                    const temp: ISteamUserGame = {
                         gameName: gameInfo.gameName,
                         totalAchievements: gameInfo.totalAchievements,
                         unlockedAchievements: gameInfo.unlockedAchievements,
                         appid: game.appid,
-                        playtime_forever: game.playtime_forever
-                    })
+                        playtime_forever: Math.round((game.playtime_forever/60)*100)/100
+                    }
+                    games.push(temp)
                 }
               }));
             return {

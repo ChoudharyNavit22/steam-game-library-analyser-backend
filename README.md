@@ -1,4 +1,4 @@
-# Platform Middleware
+# Steam Game Library Analyser Backend
 
 <p align="center">
   <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="200" alt="Nest Logo" /></a>
@@ -24,9 +24,39 @@
 
 ## Description
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript repository for platform middleware.
+[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
 
-### Please dont run yarn or try to run the application from pltaform middleware folder as the whole application is automatically binded by Lerna and Yarn
+## Installation
+
+```bash
+$ yarn install
+```
+
+## Running the app
+
+```bash
+# development
+$ yarn run start
+
+# watch mode
+$ yarn run start:dev
+
+# production mode
+$ yarn run start:prod
+```
+
+## Test
+
+```bash
+# unit tests
+$ yarn run test
+
+# e2e tests
+$ yarn run test:e2e
+
+# test coverage
+$ yarn run test:cov
+```
 
 ## License
 
