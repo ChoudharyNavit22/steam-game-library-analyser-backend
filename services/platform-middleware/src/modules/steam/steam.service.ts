@@ -111,19 +111,21 @@ export class SteamService {
         const userGamesInfo = await this.getUserGamesFromDB(steamId);
         if(liveUpdate === "true") {
           const userGameInfoFromSDK = await sdk.getUserGamesInfo(steamId);
-          if(userGamesInfo) {
-            await this.updateUserGamesToDB(steamId,{
-              games: userGameInfoFromSDK,
-              updatedAt: new Date()
-            })
-          }
-          else {
-            await this.addUserGamesToDB({
-              steamId,
-              games: userGameInfoFromSDK,
-              createdAt: new Date(),
-              updatedAt: new Date()
-            })
+          if(userGameInfoFromSDK.game_count != 0) {
+            if(userGamesInfo) {
+              await this.updateUserGamesToDB(steamId,{
+                games: userGameInfoFromSDK,
+                updatedAt: new Date()
+              })
+            }
+            else {
+              await this.addUserGamesToDB({
+                steamId,
+                games: userGameInfoFromSDK,
+                createdAt: new Date(),
+                updatedAt: new Date()
+              })
+            }
           }
           return await this.parseGameStats(userGameInfoFromSDK);
         }
@@ -133,12 +135,14 @@ export class SteamService {
           }
           else {
             const userGameInfoFromSDK = await sdk.getUserGamesInfo(steamId);
-            await this.addUserGamesToDB({
-              steamId,
-              games: userGameInfoFromSDK,
-              createdAt: new Date(),
-              updatedAt: new Date()
-            })
+            if(userGameInfoFromSDK.game_count != 0) {
+              await this.addUserGamesToDB({
+                steamId,
+                games: userGameInfoFromSDK,
+                createdAt: new Date(),
+                updatedAt: new Date()
+              })
+            }
             return await this.parseGameStats(userGameInfoFromSDK);
           }
         }
