@@ -68,7 +68,7 @@
     ]
   },
   "jest": {
-    "collectCoverage": true,
+    "collectCoverage": false,
     "moduleFileExtensions": [
       "js",
       "json",

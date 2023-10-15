@@ -10,7 +10,8 @@
     "build-app": "yarn workspace @steam/platform-middleware build",
     "build-common-pkg": "lerna run build --stream --concurrency 1 --scope @steam/steam-sdk",
     "start:dev": "lerna run --stream --concurrency 1 --scope @steam/platform-middleware start:dev",
-    "start:prod": "lerna run --stream --concurrency 1 --scope @steam/platform-middleware start:prod"
+    "start:prod": "lerna run --stream --concurrency 1 --scope @steam/platform-middleware start:prod",
+    "test": "lerna run --stream --concurrency 1 --scope @steam/platform-middleware test"
   },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^5.48.2",

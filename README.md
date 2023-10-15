@@ -26,23 +26,91 @@
 
 [Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
 
-## Installation
+# Contents
 
-```bash
+* [Manual Deployment](#manual-deployment)
+
+# Project Dependencies
+
+* MongoDB ([Install MongoDB](https://docs.mongodb.com/manual/administration/install-community/))
+* Docker ([Install Docker](https://docs.docker.com/engine/install/))
+
+# <a id="manual-deployment"></a>Manual Deployment
+
+## Setup Node.js
+
+Inorder to setup NodeJS you need to fellow the current steps:
+
+### Mac OS X
+
+* Step1: Install Home brew
+
+```
+$ /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+
+$ brew -v
+```
+
+* Step2: Install Node using Brew
+
+```
+$ brew install node
+
+$ node -v
+
+$ npm -v
+```
+
+### Linux Systems
+
+* Step1: Install Node using apt-get
+
+```
+$ sudo apt-get install curl python-software-properties
+
+$ curl -sL https://deb.nodesource.com/setup_18.x | sudo -E bash -
+
+$ sudo apt-get install nodejs
+
+$ node -v
+
+$ npm -v
+```
+## Setup Application
+
+* Step1: Git clone the application
+
+* Step2: Install Yarn Globaly
+
+```
+$ npm install --global yarn
+```
+
+* Step3: Install node modules
+
+```
 $ yarn install
+```
+
+* Step4: Copy .env.example to .env
+
+```
+$ cp .env.example .env
+```
+
+Make Sure you add Steam key to the .env file. You can generate steam key (here)[https://steamcommunity.com/dev/apikey] and bind the domain to localhost if running locally or to the domain where you are running the project.
+
+* Step5: Run local postgres using docker
+
+```
+$ docker-compose up -d
 ```
 
 ## Running the app
 
 ```bash
 # development
-$ yarn run start
-
-# watch mode
 $ yarn run start:dev
-
-# production mode
-$ yarn run start:prod
 ```
 
 ## Test
@@ -50,12 +118,6 @@ $ yarn run start:prod
 ```bash
 # unit tests
 $ yarn run test
-
-# e2e tests
-$ yarn run test:e2e
-
-# test coverage
-$ yarn run test:cov
 ```
 
 ## License
