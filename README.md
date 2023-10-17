@@ -34,7 +34,6 @@ Please dont install any node_modules in any internal folders or try to run the a
 
 # Project Dependencies
 
-* MongoDB ([Install MongoDB](https://docs.mongodb.com/manual/administration/install-community/))
 * Docker ([Install Docker](https://docs.docker.com/engine/install/))
 
 # <a id="manual-deployment"></a>Manual Deployment
